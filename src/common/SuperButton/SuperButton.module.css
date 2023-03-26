@@ -1,0 +1,26 @@
+.button {
+    /*color: #cc0000;*/
+    background-color: darkolivegreen;
+    height: 25px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+}
+
+.disabled {
+    color: #0059b3;
+}
+
+.secondary {
+    color: #0059b3;
+    background-color: #0059b3;
+}
+
+.default {
+    color: #0059b3;
+    background-color: black;
+}
+
+/*.red {*/
+/*    background-color: #cc0000;*/
+/*}*/
