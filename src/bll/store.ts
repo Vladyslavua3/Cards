@@ -1,7 +1,9 @@
-import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import {profileReducer} from "./profileReducer";
-import {loginReducer} from "./loginReducer";
-import thunk from "redux-thunk";
+import {AnyAction,  combineReducers} from "redux";
+import  {ThunkDispatch} from "redux-thunk";
+import {configureStore} from "@reduxjs/toolkit";
+import {loginReducer} from "../bll/loginSlice"
+import {profileReducer} from "../bll/profileSlice";
+
 
 
 const rootReducer = combineReducers({
@@ -9,9 +11,14 @@ const rootReducer = combineReducers({
         auth:loginReducer
 })
 
-export type AppStateType = ReturnType<typeof rootReducer>
+export const store = configureStore({
+        reducer:rootReducer
+})
+
+export type AppRootStateType = ReturnType<typeof rootReducer>
+
+export type AppDispatch = ThunkDispatch<AppRootStateType, unknown, AnyAction>
 
 
-
-
-export const store = legacy_createStore(rootReducer,applyMiddleware(thunk))
+// @ts-ignore
+window.store = store
