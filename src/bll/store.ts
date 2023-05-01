@@ -1,6 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { AnyAction, combineReducers } from 'redux'
-import { ThunkDispatch } from 'redux-thunk'
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
 
 import { loginReducer } from 'bll/loginSlice'
 import { profileReducer } from 'bll/profileSlice'
@@ -16,7 +15,14 @@ export const store = configureStore({
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
-export type AppDispatch = ThunkDispatch<AppRootStateType, unknown, AnyAction>
+export type AppDispatch = typeof store.dispatch
+
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  AppRootStateType,
+  unknown,
+  Action<string>
+>
 
 // @ts-ignore
 window.store = store
