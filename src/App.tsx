@@ -4,13 +4,13 @@ import './App.css'
 
 import { Link, Route, Routes } from 'react-router-dom'
 
-import { Test } from './common/Test'
-import { Error } from './components/Error/Error'
-import { Login } from './components/Login/Login'
-import { NewPass } from './components/Password/NewPass/NewPass'
-import { ResetPass } from './components/Password/ResetPass/ResetPass'
-import { Profile } from './components/Profile/Profile'
-import { Registration } from './components/Registration/Registration'
+import { Test } from 'common/Test'
+import { Error } from 'components/Error/Error'
+import { Login } from 'components/Login/Login'
+import { NewPass } from 'components/Password/NewPass/NewPass'
+import { ResetPass } from 'components/Password/ResetPass/ResetPass'
+import { Profile } from 'components/Profile/Profile'
+import { Registration } from 'components/Registration/Registration'
 
 function App() {
   return (

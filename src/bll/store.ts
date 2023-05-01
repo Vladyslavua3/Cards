@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import { AnyAction, combineReducers } from 'redux'
 import { ThunkDispatch } from 'redux-thunk'
 
-import { loginReducer } from '../bll/loginSlice'
-import { profileReducer } from '../bll/profileSlice'
+import { loginReducer } from 'bll/loginSlice'
+import { profileReducer } from 'bll/profileSlice'
 
 const rootReducer = combineReducers({
   profile: profileReducer,
